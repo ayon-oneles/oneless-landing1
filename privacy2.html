@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Oneless | Revolutionary Quit Smoking App</title>
+    <meta name="description" content="Oneless Privacy Policy - How we protect and handle your smoking behavior data with enterprise-grade security and privacy-first architecture.">
+    
+    <!-- Preload critical font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #007AFF;
+            --primary-dark: #0056CC;
+            --secondary: #5856D6;
+            --accent: #FF3B30;
+            --success: #34C759;
+            --warning: #FF9500;
+            
+            --text-primary: #1D1D1F;
+            --text-secondary: #6E6E73;
+            --text-tertiary: #86868B;
+            
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F5F5F7;
+            --bg-tertiary: #FBFBFD;
+            --bg-dark: #1D1D1F;
+            
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-dark: rgba(29, 29, 31, 0.7);
+            
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 16px 60px rgba(0, 0, 0, 0.16);
+            
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-xl: 40px;
+            
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Premium Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 16px 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 32px 80px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 122, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(88, 86, 214, 0.08) 0%, transparent 50%);
+            animation: float 30s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(90deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            75% { transform: translateY(-10px) rotate(270deg); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 122, 255, 0.2);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Main Content Container */
+        .main-container {
+            max-width: 900px;
+            margin: -40px auto 80px;
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 3;
+            overflow: hidden;
+        }
+
+        .content {
+            padding: 60px 50px;
+        }
+
+        /* Table of Contents */
+        .table-of-contents {
+            background: var(--bg-tertiary);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            margin-bottom: 48px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .toc-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px 24px;
+            list-style: none;
+        }
+
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            display: block;
+        }
+
+        .toc-list a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(4px);
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 48px;
+            scroll-margin-top: 100px;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary);
+            position: relative;
+        }
+
+        .section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .section h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 32px 0 16px 0;
+        }
+
+        .section h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin: 24px 0 12px 0;
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .section ul {
+            margin: 16px 0 24px 24px;
+        }
+
+        .section li {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Special Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.05) 0%, rgba(88, 86, 214, 0.05) 100%);
+            border: 1px solid rgba(0, 122, 255, 0.2);
+            border-left: 4px solid var(--primary);
+            padding: 24px 28px;
+            margin: 32px 0;
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(10px);
+        }
+
+        .highlight-box p {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 59, 48, 0.05) 0%, rgba(255, 149, 0, 0.05) 100%);
+            border: 1px solid rgba(255, 59, 48, 0.2);
+            border-left: 4px solid var(--accent);
+            padding: 24px 28px;
+            margin: 32px 0;
+            border-radius: var(--radius-md);
+        }
+
+        .warning-box p {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(52, 199, 89, 0.05) 0%, rgba(0, 122, 255, 0.05) 100%);
+            border: 1px solid rgba(52, 199, 89, 0.2);
+            border-left: 4px solid var(--success);
+            padding: 24px 28px;
+            margin: 32px 0;
+            border-radius: var(--radius-md);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--bg-dark);
+            color: white;
+            padding: 48px;
+            border-radius: var(--radius-lg);
+            margin: 48px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(0, 122, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(88, 86, 214, 0.15) 0%, transparent 50%);
+        }
+
+        .contact-section .contact-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-section h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .contact-section p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+        }
+
+        .contact-section a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 2px 0;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+        }
+
+        .contact-section a:hover {
+            border-bottom-color: white;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 32px;
+            color: var(--text-tertiary);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            margin-top: 60px;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            width: 56px;
+            height: 56px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition-bounce);
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 20px 60px;
+            }
+
+            .main-container {
+                margin: -20px 20px 60px;
+                border-radius: var(--radius-lg);
+            }
+
+            .content {
+                padding: 40px 24px;
+            }
+
+            .table-of-contents {
+                padding: 24px;
+            }
+
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .contact-section {
+                padding: 32px 24px;
+            }
+
+            .back-to-top {
+                bottom: 24px;
+                right: 24px;
+                width: 48px;
+                height: 48px;
+                font-size: 16px;
+            }
+        }
+
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Oneless</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="mailto:xodaxoda@gmail.com">Contact</a></li>
+            </ul>
+            <a href="index.html#coming-soon" class="nav-cta">Get Notified</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <div class="hero-badge">
+                🛡️ Enterprise-Grade Privacy Protection
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="hero-description">
+                How we protect your data with bank-level encryption, privacy-first architecture, 
+                and zero data monetization. Your journey remains exclusively yours.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-container fade-in">
+        <div class="content">
+            <!-- Table of Contents -->
+            <div class="table-of-contents">
+                <h3 class="toc-title">📋 Quick Navigation</h3>
+                <ul class="toc-list">
+                    <li><a href="#introduction">1. Introduction</a></li>
+                    <li><a href="#information-collection">2. Information We Collect</a></li>
+                    <li><a href="#information-use">3. How We Use Your Information</a></li>
+                    <li><a href="#data-sharing">4. Data Sharing & Third Parties</a></li>
+                    <li><a href="#data-security">5. Data Security & Storage</a></li>
+                    <li><a href="#device-management">6. Device Management</a></li>
+                    <li><a href="#your-rights">7. Your Data Rights</a></li>
+                    <li><a href="#international-transfers">8. International Transfers</a></li>
+                    <li><a href="#children-privacy">9. Children's Privacy</a></li>
+                    <li><a href="#policy-changes">10. Policy Changes</a></li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>Last Updated:</strong> August 4, 2025</p>
+                <p><strong>Effective Date:</strong> August 4, 2025</p>
+                <p><strong>Developer:</strong> Ayon, United Arab Emirates</p>
+            </div>
+
+            <!-- Section 1: Introduction -->
+            <section id="introduction" class="section">
+                <h2>1. Introduction</h2>
+                
+                <p>Welcome to Oneless, the world's most advanced smoking cessation platform. This Privacy Policy explains how we collect, use, protect, and handle your information when you use our revolutionary mobile application featuring AI coaching, shake detection, and behavioral intelligence.</p>
+                
+                <p>Oneless is developed and operated by <strong>Ayon</strong>, based in the United Arab Emirates. We are committed to protecting your privacy with enterprise-grade security measures and a privacy-first architecture that ensures your personal journey remains exclusively yours.</p>
+                
+                <div class="info-box">
+                    <p><strong>🔒 Privacy-First Promise:</strong> We do not sell, rent, or monetize your personal data. Your smoking cessation journey is private, secure, and protected by bank-level encryption.</p>
+                </div>
+            </section>
+
+            <!-- Section 2: Information We Collect -->
+            <section id="information-collection" class="section">
+                <h2>2. Information We Collect</h2>
+                
+                <h3>Data You Directly Provide</h3>
+                
+                <h4>🔐 Account Information</h4>
+                <ul>
+                    <li><strong>Email Address:</strong> For secure account authentication and essential communication</li>
+                    <li><strong>Account Preferences:</strong> Theme settings, notification preferences, and app configuration</li>
+                </ul>
+                
+                <h4>📊 Behavioral Intelligence Data</h4>
+                <ul>
+                    <li><strong>Initial Setup:</strong> Daily cigarette consumption estimate and cigarette pack price (stored in Firebase Realtime Database)</li>
+                    <li><strong>Smoking Logs:</strong> Precise timestamps, cigarette counts, and behavioral patterns (secured in Firebase Storage)</li>
+                    <li><strong>Shake Detection:</strong> Motion sensitivity preferences and gesture-based logging data</li>
+                    <li><strong>Progress Tracking:</strong> Personal goals, milestones, and achievement data</li>
+                </ul>
+                
+                <h3>Data Collected Automatically</h3>
+                
+                <h4>🖥️ Device Intelligence</h4>
+                <ul>
+                    <li><strong>Unique Device ID:</strong> For premium subscription management and anti-fraud protection</li>
+                    <li><strong>Device Performance:</strong> App stability metrics, crash reports, and optimization data</li>
+                    <li><strong>Network Status:</strong> Connectivity patterns for offline protection and subscription validation</li>
+                </ul>
+                
+                <h4>📈 Anonymous Analytics</h4>
+                <ul>
+                    <li><strong>Usage Patterns:</strong> Feature interaction statistics collected through Firebase Analytics</li>
+                    <li><strong>Performance Metrics:</strong> App responsiveness, loading times, and user experience data</li>
+                    <li><strong>Security Events:</strong> Failed login attempts, suspicious activity detection</li>
+                </ul>
+                
+                <h3>Enterprise-Grade Storage Architecture</h3>
+                
+                <div class="highlight-box">
+                    <h4>🏗️ Data Storage Locations:</h4>
+                    <ul>
+                        <li><strong>Local Device:</strong> Current session data, preferences, encrypted offline cache</li>
+                        <li><strong>Firebase Realtime Database:</strong> Initial setup data with real-time synchronization</li>
+                        <li><strong>Firebase Storage:</strong> Encrypted backup files with versioning and redundancy</li>
+                        <li><strong>Firebase Authentication:</strong> Secure credential management with multi-factor options</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 3: How We Use Your Information -->
+            <section id="information-use" class="section">
+                <h2>3. How We Use Your Information</h2>
+                
+                <h3>🧠 AI-Powered Behavioral Intelligence</h3>
+                <ul>
+                    <li><strong>Pattern Recognition:</strong> Analyze your unique smoking DNA to provide personalized insights</li>
+                    <li><strong>Real-Time Coaching:</strong> Deliver context-aware feedback at critical moments</li>
+                    <li><strong>Predictive Analytics:</strong> Anticipate challenges and provide proactive support</li>
+                    <li><strong>Progress Optimization:</strong> Dynamically adjust goals based on your behavioral patterns</li>
+                </ul>
+                
+                <h3>💰 Financial Impact Tracking</h3>
+                <ul>
+                    <li><strong>Savings Calculation:</strong> Real-time financial impact based on your actual progress</li>
+                    <li><strong>Cost Analysis:</strong> Detailed breakdown of smoking expenses and reduction benefits</li>
+                    <li><strong>Motivation Enhancement:</strong> Tangible financial milestones to maintain momentum</li>
+                </ul>
+                
+                <h3>🔄 Advanced Backup & Synchronization</h3>
+                <ul>
+                    <li><strong>Intelligent Backup:</strong> Automatic data protection with temporal distribution algorithms</li>
+                    <li><strong>Cross-Device Security:</strong> Secure data migration with device switching protection</li>
+                    <li><strong>Retroactive Intelligence:</strong> Smart reconstruction of smoking timelines for missed entries</li>
+                </ul>
+                
+                <h3>🛡️ Premium Security & Anti-Fraud</h3>
+                <ul>
+                    <li><strong>Time Tampering Detection:</strong> Advanced algorithms to detect device manipulation</li>
+                    <li><strong>Subscription Protection:</strong> Multi-layer fraud prevention and abuse monitoring</li>
+                    <li><strong>Account Integrity:</strong> Behavioral analysis to ensure authentic usage patterns</li>
+                </ul>
+                
+                <h3>📱 Intelligent Notifications</h3>
+                <ul>
+                    <li><strong>Activity Reminders:</strong> Smart prompts based on your historical patterns</li>
+                    <li><strong>Progress Celebrations:</strong> Personalized milestone achievements and encouragement</li>
+                    <li><strong>Security Alerts:</strong> Important account and subscription status notifications</li>
+                    <li><strong>Health Insights:</strong> Educational content tailored to your cessation journey</li>
+                </ul>
+            </section>
+
+            <!-- Section 4: Data Sharing & Third Parties -->
+            <section id="data-sharing" class="section">
+                <h2>4. Data Sharing & Third-Party Services</h2>
+                
+                <div class="warning-box">
+                    <p><strong>🚫 Zero Data Monetization Policy:</strong> We NEVER sell, rent, or share your personal information for marketing purposes. Your data is not a product—your privacy is our priority.</p>
+                </div>
+                
+                <h3>Essential Service Providers</h3>
+                
+                <h4>🔥 Google Firebase Ecosystem</h4>
+                <ul>
+                    <li><strong>Firebase Authentication:</strong> Military-grade login security with encrypted credential storage</li>
+                    <li><strong>Firebase Realtime Database:</strong> High-availability storage for your essential setup data</li>
+                    <li><strong>Firebase Storage:</strong> Bank-level encrypted backup infrastructure with redundancy</li>
+                    <li><strong>Firebase Analytics:</strong> Completely anonymous usage insights for app improvement</li>
+                </ul>
+                
+                <h4>💳 Google Play Services</h4>
+                <ul>
+                    <li><strong>Play Billing:</strong> All subscription processing handled entirely by Google Play</li>
+                    <li><strong>Payment Isolation:</strong> We never access, store, or process your payment information</li>
+                    <li><strong>Subscription Management:</strong> Complete billing control through your Google Play account</li>
+                </ul>
+                
+                <h3>Legal Compliance</h3>
+                <p>We may disclose information only when legally required by court order, government regulation, or to protect our legitimate business interests, user safety, or platform security.</p>
+            </section>
+
+            <!-- Section 5: Data Security & Storage -->
+            <section id="data-security" class="section">
+                <h2>5. Data Security & Storage</h2>
+                
+                <h3>🏦 Bank-Level Security Architecture</h3>
+                
+                <h4>Encryption Standards</h4>
+                <ul>
+                    <li><strong>Data in Transit:</strong> AES-256 encryption with TLS 1.3 for all communications</li>
+                    <li><strong>Data at Rest:</strong> Advanced encryption for all stored data with key rotation</li>
+                    <li><strong>Authentication Security:</strong> Multi-layer protection with secure token management</li>
+                    <li><strong>Device Protection:</strong> Local encryption for sensitive cached data</li>
+                </ul>
+                
+                <h4>Access Control & Monitoring</h4>
+                <ul>
+                    <li><strong>Zero-Trust Architecture:</strong> Strict access controls with principle of least privilege</li>
+                    <li><strong>Activity Monitoring:</strong> Real-time security event detection and response</li>
+                    <li><strong>Audit Trails:</strong> Comprehensive logging of all data access and modifications</li>
+                    <li><strong>Intrusion Detection:</strong> Advanced threat monitoring and automated response</li>
+                </ul>
+                
+                <h3>📊 Data Retention Policy</h3>
+                
+                <div class="info-box">
+                    <h4>🗃️ Retention Schedule:</h4>
+                    <ul>
+                        <li><strong>Active Accounts:</strong> Data retained indefinitely while subscription remains active</li>
+                        <li><strong>Inactive Accounts:</strong> Data preserved for 2 years to enable account recovery</li>
+                        <li><strong>Deleted Accounts:</strong> Complete data purge within 30 days of deletion request</li>
+                        <li><strong>Analytics Data:</strong> Anonymous data retained per Firebase Analytics policies</li>
+                        <li><strong>Security Logs:</strong> Anonymized security events retained for 1 year for platform protection</li>
+                    </ul>
+                </div>
+                
+                <h3>🔄 Backup & Recovery</h3>
+                <ul>
+                    <li><strong>Automated Backups:</strong> Multiple redundant copies with geographic distribution</li>
+                    <li><strong>Version Control:</strong> Historical data versioning for accidental loss recovery</li>
+                    <li><strong>Disaster Recovery:</strong> Robust infrastructure with 99.9% uptime guarantee</li>
+                    <li><strong>Data Integrity:</strong> Continuous validation and corruption detection</li>
+                </ul>
+            </section>
+
+            <!-- Section 6: Device Management -->
+            <section id="device-management" class="section">
+                <h2>6. Device Management & Subscription Policies</h2>
+                
+                <h3>📱 Premium Device Switching Policy</h3>
+                
+                <div class="highlight-box">
+                    <h4>🔄 Device Change Rules:</h4>
+                    <ul>
+                        <li><strong>Initial Setup:</strong> Unlimited device switches during first account creation</li>
+                        <li><strong>Monthly Limitation:</strong> One device switch per month after initial setup</li>
+                        <li><strong>Emergency Support:</strong> Contact xodaxoda@gmail.com for urgent device changes with verification</li>
+                        <li><strong>Security Enforcement:</strong> Unauthorized switching triggers premium feature suspension</li>
+                    </ul>
+                </div>
+                
+                <h3>🔐 Account Security Measures</h3>
+                
+                <h4>Connectivity Requirements</h4>
+                <ul>
+                    <li><strong>Regular Validation:</strong> Online connection required every 3 days for subscription verification</li>
+                    <li><strong>Offline Protection:</strong> 11-day offline limit to prevent subscription abuse</li>
+                    <li><strong>Automatic Recovery:</strong> Frozen accounts restored through simple online connectivity</li>
+                    <li><strong>Grace Period:</strong> Flexible enforcement during legitimate connectivity issues</li>
+                </ul>
+                
+                <h4>Anti-Fraud Technology</h4>
+                <ul>
+                    <li><strong>Time Integrity:</strong> Advanced detection of device time manipulation attempts</li>
+                    <li><strong>Usage Patterns:</strong> Behavioral analysis to identify suspicious account activity</li>
+                    <li><strong>Device Fingerprinting:</strong> Secure identification without compromising privacy</li>
+                    <li><strong>Version Control:</strong> Mandatory updates for security patches and stability improvements</li>
+                </ul>
+            </section>
+
+            <!-- Section 7: Your Data Rights -->
+            <section id="your-rights" class="section">
+                <h2>7. Your Data Rights & Control</h2>
+                
+                <h3>🎛️ Complete Data Control</h3>
+                
+                <h4>Access & Management</h4>
+                <ul>
+                    <li><strong>Real-Time Access:</strong> View all your data through the app's comprehensive analytics dashboard</li>
+                    <li><strong>Granular Editing:</strong> Modify or delete individual entries with precision control</li>
+                    <li><strong>Bulk Operations:</strong> Efficient management of large data sets when needed</li>
+                    <li><strong>Data Export:</strong> Request complete data export in portable formats</li>
+                </ul>
+                
+                <h4>🗑️ Account Deletion Process</h4>
+                
+                <div class="warning-box">
+                    <p><strong>Permanent Account Deletion:</strong></p>
+                    <ul>
+                        <li><strong>Request Method:</strong> Email xodaxoda@gmail.com with deletion request</li>
+                        <li><strong>Verification Process:</strong> Identity confirmation for security purposes</li>
+                        <li><strong>Deletion Timeline:</strong> Complete data removal within 30 days</li>
+                        <li><strong>Scope:</strong> All personal data across Firebase services and device records</li>
+                        <li><strong>Confirmation:</strong> Email verification once deletion is complete</li>
+                    </ul>
+                </div>
+                
+                <h3>📢 Notification Management</h3>
+                <ul>
+                    <li><strong>Granular Controls:</strong> Customize notification types, frequency, and timing</li>
+                    <li><strong>Smart Filtering:</strong> Intelligent notification prioritization based on importance</li>
+                    <li><strong>Do Not Disturb:</strong> Respect device-level notification settings</li>
+                    <li><strong>Emergency Bypass:</strong> Critical security notifications always delivered</li>
+                </ul>
+                
+                <h3>📤 Data Portability</h3>
+                <ul>
+                    <li><strong>Structured Export:</strong> Data provided in JSON, CSV, or XML formats</li>
+                    <li><strong>Complete History:</strong> Full timeline of smoking patterns and progress</li>
+                    <li><strong>Metadata Inclusion:</strong> Timestamps, device information, and analytical insights</li>
+                    <li><strong>Privacy Protection:</strong> Secure delivery through encrypted channels</li>
+                </ul>
+            </section>
+
+            <!-- Section 8: International Transfers & GDPR -->
+            <section id="international-transfers" class="section">
+                <h2>8. International Data Transfers & GDPR Compliance</h2>
+                
+                <p>Oneless operates globally with users across multiple continents. Your data may be transferred to and processed in countries other than your own, including the United States (Firebase servers) and the European Union, with appropriate safeguards in place.</p>
+                
+                <h3>🇪🇺 European Union Users (GDPR Rights)</h3>
+                
+                <div class="info-box">
+                    <h4>Your GDPR Rights:</h4>
+                    <ul>
+                        <li><strong>Right to Access:</strong> Request complete copies of all personal data we hold</li>
+                        <li><strong>Right to Rectification:</strong> Correct any inaccurate or incomplete information</li>
+                        <li><strong>Right to Erasure:</strong> Request deletion of personal data ("right to be forgotten")</li>
+                        <li><strong>Right to Restrict Processing:</strong> Limit how we process your information</li>
+                        <li><strong>Right to Data Portability:</strong> Receive your data in a portable, machine-readable format</li>
+                        <li><strong>Right to Object:</strong> Object to certain types of data processing</li>
+                        <li><strong>Rights Related to Automated Decision Making:</strong> Human review of automated processing</li>
+                    </ul>
+                </div>
+                
+                <h3>🌍 International Data Protection</h3>
+                <ul>
+                    <li><strong>Adequacy Decisions:</strong> Transfers only to countries with adequate protection levels</li>
+                    <li><strong>Standard Contractual Clauses:</strong> EU-approved data transfer mechanisms</li>
+                    <li><strong>Binding Corporate Rules:</strong> Internal policies ensuring consistent global protection</li>
+                    <li><strong>Privacy Shield Successor:</strong> Compliance with evolving transatlantic frameworks</li>
+                </ul>
+                
+                <h4>Legal Basis for Processing</h4>
+                <ul>
+                    <li><strong>Contract Performance:</strong> Processing necessary to provide Oneless services</li>
+                    <li><strong>Legitimate Interests:</strong> App improvement, security, and fraud prevention</li>
+                    <li><strong>Consent:</strong> Optional features requiring explicit user agreement</li>
+                    <li><strong>Legal Compliance:</strong> Meeting regulatory and legal obligations</li>
+                </ul>
+            </section>
+
+            <!-- Section 9: Children's Privacy -->
+            <section id="children-privacy" class="section">
+                <h2>9. Children's Privacy Protection</h2>
+                
+                <div class="warning-box">
+                    <p><strong>⚠️ Age Restriction Policy:</strong> Oneless is designed exclusively for adults aged 18 and older. We do not knowingly collect, store, or process personal information from individuals under 18 years of age.</p>
+                </div>
+                
+                <h3>🔞 Age Verification Measures</h3>
+                <ul>
+                    <li><strong>Terms Acknowledgment:</strong> Users must confirm they meet minimum age requirements</li>
+                    <li><strong>Content Appropriateness:</strong> All features designed for adult smoking cessation needs</li>
+                    <li><strong>Parental Awareness:</strong> Parents advised to monitor app usage on shared devices</li>
+                    <li><strong>Immediate Action:</strong> Any underage accounts discovered are immediately deleted</li>
+                </ul>
+                
+                <h3>👨‍👩‍👧‍👦 Parental Rights</h3>
+                <p>If you believe your child under 18 has provided information to Oneless, please contact us immediately at <strong>xodaxoda@gmail.com</strong>. We will promptly investigate and delete any such information.</p>
+            </section>
+
+            <!-- Section 10: Policy Changes -->
+            <section id="policy-changes" class="section">
+                <h2>10. Changes to This Privacy Policy</h2>
+                
+                <p>We may update this Privacy Policy periodically to reflect changes in our practices, new features, or applicable laws. We are committed to transparency and will always inform you of material changes.</p>
+                
+                <h3>📨 Change Notification Process</h3>
+                <ul>
+                    <li><strong>Email Notifications:</strong> Direct communication about significant policy updates</li>
+                    <li><strong>In-App Alerts:</strong> Prominent notifications when you next use the app</li>
+                    <li><strong>Website Updates:</strong> Current policy always available at our website</li>
+                    <li><strong>Version History:</strong> Previous policy versions maintained for transparency</li>
+                </ul>
+                
+                <h3>⏰ Effective Date Policy</h3>
+                <ul>
+                    <li><strong>30-Day Notice:</strong> Major changes communicated 30 days before implementation</li>
+                    <li><strong>Continued Use:</strong> Using the app after changes indicates acceptance</li>
+                    <li><strong>Objection Rights:</strong> Option to delete account if you disagree with changes</li>
+                    <li><strong>Grandfathering:</strong> Existing users protected from disadvantageous changes when possible</li>
+                </ul>
+            </section>
+
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <div class="contact-content">
+                    <h3>🤝 Contact & Support</h3>
+                    <p><strong>App:</strong> Oneless - Revolutionary Smoking Cessation Platform</p>
+                    <p><strong>Developer:</strong> Ayon</p>
+                    <p><strong>Location:</strong> United Arab Emirates</p>
+                    <p><strong>Email:</strong> <a href="mailto:xodaxoda@gmail.com">xodaxoda@gmail.com</a></p>
+                    <p><strong>Response Time:</strong> 24-48 hours for privacy inquiries</p>
+                    <p><strong>Support Types:</strong> Data requests, account deletion, privacy questions, GDPR compliance</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>This Privacy Policy was last updated on August 4, 2025</strong></p>
+                <p><strong>© 2025 Ayon. All rights reserved.</strong> | Oneless - Premium Smoking Cessation Platform | Engineered with Privacy in UAE</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Ayon. All rights reserved. | Oneless - Redefining Smoking Cessation | Privacy-First Architecture</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Premium loading experience
+        document.addEventListener('DOMContentLoaded', function() {
+            // Premium scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth navigation scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Premium navigation effects
+            const nav = document.querySelector('.nav');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                    nav.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.7)';
+                    nav.style.borderBottom = '1px solid rgba(0, 0, 0, 0.05)';
+                }
+            });
+
+            // Show/hide back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            // Premium table of contents highlighting
+            const sections = document.querySelectorAll('.section');
+            const tocLinks = document.querySelectorAll('.toc-list a');
+            
+            const highlightTOC = () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                tocLinks.forEach(link => {
+                    link.style.background = '';
+                    link.style.color = '';
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.style.background = 'var(--primary)';
+                        link.style.color = 'white';
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', highlightTOC);
+            highlightTOC(); // Initial call
+
+            // Premium interactions
+            const boxes = document.querySelectorAll('.highlight-box, .warning-box, .info-box');
+            boxes.forEach(box => {
+                box.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.boxShadow = 'var(--shadow-lg)';
+                });
+                
+                box.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '';
+                });
+            });
+
+            // Performance optimization
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (prefersReducedMotion.matches) {
+                const style = document.createElement('style');
+                style.textContent = `
+                    *, *::before, *::after {
+                        animation-duration: 0.01ms !important;
+                        animation-iteration-count: 1 !important;
+                        transition-duration: 0.01ms !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
