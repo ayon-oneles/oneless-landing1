@@ -30,8 +30,6 @@
             --bg-dark: #1D1D1F;
             
             --glass: rgba(255, 255, 255, 0.7);
-            --glass-dark: rgba(29, 29, 31, 0.7);
-            
             --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
             --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
             --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
@@ -212,14 +210,14 @@
             padding: 0 32px;
         }
 
-        /* Terms Card Layout */
-        .terms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 24px;
-            margin-bottom: 60px;
+        /* Terms Cards Container */
+        .terms-container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
         }
 
+        /* Term Card Styling */
         .term-card {
             background: var(--bg-primary);
             border-radius: var(--radius-lg);
@@ -228,12 +226,22 @@
             overflow: hidden;
             transition: var(--transition);
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(60px);
         }
 
         .term-card.fade-in {
-            opacity: 1;
-            transform: translateY(0);
+            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .term-card:hover {
@@ -245,25 +253,31 @@
             padding: 32px;
             background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .card-icon {
-            font-size: 32px;
-            margin-bottom: 16px;
-            display: block;
+            font-size: 40px;
+            flex-shrink: 0;
+        }
+
+        .card-title-container {
+            flex: 1;
         }
 
         .card-title {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
-        .card-description {
+        .card-subtitle {
             color: var(--text-secondary);
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .card-body {
@@ -274,45 +288,41 @@
             margin-bottom: 24px;
         }
 
-        .card-preview ul {
+        .preview-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
             list-style: none;
-            margin: 0;
         }
 
-        .card-preview li {
+        .preview-list li {
             color: var(--text-secondary);
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
+            padding: 12px 16px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-sm);
             font-size: 15px;
-        }
-
-        .card-preview li::before {
-            content: '•';
-            color: var(--primary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
+            font-weight: 500;
+            border-left: 3px solid var(--primary);
         }
 
         .card-details {
             max-height: 0;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             opacity: 0;
         }
 
         .card-details.expanded {
-            max-height: 1000px;
+            max-height: 2000px;
             opacity: 1;
             margin-top: 24px;
         }
 
         .card-details h4 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
             color: var(--text-primary);
-            margin: 20px 0 12px 0;
+            margin: 24px 0 16px 0;
         }
 
         .card-details p {
@@ -335,14 +345,17 @@
             background: var(--primary);
             color: white;
             border: none;
-            padding: 12px 24px;
+            padding: 16px 32px;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 16px;
             cursor: pointer;
             transition: var(--transition-bounce);
             width: 100%;
-            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         .learn-more-btn:hover {
@@ -360,8 +373,8 @@
 
         /* Special Alert Boxes */
         .alert-box {
-            padding: 20px 24px;
-            margin: 16px 0;
+            padding: 24px;
+            margin: 20px 0;
             border-radius: var(--radius-md);
             border-left: 4px solid;
         }
@@ -397,13 +410,13 @@
             gap: 8px;
             background: linear-gradient(135deg, var(--accent), #FF6B47);
             color: white;
-            padding: 12px 20px;
+            padding: 14px 24px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 15px;
             transition: var(--transition);
-            margin: 8px 0;
+            margin: 12px 0;
         }
 
         .cancel-link:hover {
@@ -412,9 +425,8 @@
             background: linear-gradient(135deg, #FF6B47, var(--accent));
         }
 
-        /* Introduction Card */
+        /* Introduction Card Special Styling */
         .intro-card {
-            grid-column: 1 / -1;
             background: linear-gradient(135deg, var(--bg-dark) 0%, #2C2C2E 100%);
             color: white;
             position: relative;
@@ -445,11 +457,16 @@
         }
 
         .intro-card .card-title,
-        .intro-card .card-description {
+        .intro-card .card-subtitle {
             color: white;
         }
 
-        .intro-card .card-preview li,
+        .intro-card .preview-list li {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            border-left-color: rgba(255, 255, 255, 0.3);
+        }
+
         .intro-card .card-details p,
         .intro-card .card-details li {
             color: rgba(255, 255, 255, 0.8);
@@ -514,14 +531,19 @@
                 padding: 0 20px;
             }
 
-            .terms-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .card-header {
+                padding: 24px;
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
             }
 
-            .card-header,
             .card-body {
                 padding: 24px;
+            }
+
+            .preview-list {
+                grid-template-columns: 1fr;
             }
 
             .back-to-top {
@@ -530,18 +552,6 @@
                 width: 48px;
                 height: 48px;
                 font-size: 16px;
-            }
-        }
-
-        /* Animation keyframes */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
             }
         }
     </style>
@@ -577,20 +587,23 @@
 
     <!-- Main Content -->
     <div class="main-container">
-        <div class="terms-grid">
+        <div class="terms-container">
             <!-- Introduction Card -->
-            <div class="term-card intro-card" data-delay="0">
+            <div class="term-card intro-card">
                 <div class="card-header">
                     <span class="card-icon">🚀</span>
-                    <h2 class="card-title">Introduction</h2>
-                    <p class="card-description">Welcome to Oneless - Your premium smoking cessation platform</p>
+                    <div class="card-title-container">
+                        <h2 class="card-title">Welcome to Oneless</h2>
+                        <p class="card-subtitle">Your premium smoking cessation platform with advanced AI coaching</p>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="card-preview">
-                        <ul>
-                            <li>Last Updated: August 4, 2025</li>
-                            <li>Developer: Ayon, UAE</li>
-                            <li>Premium tracking & AI coaching</li>
+                        <ul class="preview-list">
+                            <li>📅 Last Updated: August 4, 2025</li>
+                            <li>🏢 Developer: Ayon, UAE</li>
+                            <li>🤖 Premium AI coaching included</li>
+                            <li>🔒 Bank-level security</li>
                         </ul>
                     </div>
                     <div class="card-details">
@@ -609,23 +622,28 @@
                             <li>Effective Date: August 4, 2025</li>
                         </ul>
                     </div>
-                    <button class="learn-more-btn" onclick="toggleDetails(this)">Learn More</button>
+                    <button class="learn-more-btn" onclick="toggleDetails(this)">
+                        <span>Learn More</span>
+                        <span>↓</span>
+                    </button>
                 </div>
             </div>
 
             <!-- Medical Disclaimer Card -->
-            <div class="term-card" data-delay="100">
+            <div class="term-card">
                 <div class="card-header">
                     <span class="card-icon">⚕️</span>
-                    <h2 class="card-title">Medical Disclaimer</h2>
-                    <p class="card-description">Important health and safety information</p>
+                    <div class="card-title-container">
+                        <h2 class="card-title">Medical Disclaimer</h2>
+                        <p class="card-subtitle">Important health and safety information you need to know</p>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="card-preview">
-                        <ul>
-                            <li>Not a medical device or treatment</li>
-                            <li>Consult healthcare professionals</li>
-                            <li>Motivational tracking tool only</li>
+                        <ul class="preview-list">
+                            <li>🚫 Not a medical device or treatment</li>
+                            <li>👨‍⚕️ Always consult healthcare professionals</li>
+                            <li>📊 Motivational tracking tool only</li>
                         </ul>
                     </div>
                     <div class="card-details">
@@ -639,29 +657,31 @@
                             <li><strong>Professional Consultation:</strong> Always consult qualified healthcare professionals regarding your health and smoking cessation plans</li>
                             <li><strong>Medical Priority:</strong> Do not disregard professional medical advice because of app information</li>
                             <li><strong>Emergency Care:</strong> Seek immediate medical attention for any health issues related to smoking or cessation attempts</li>
-                            <li><strong>Individual Results:</strong> Success rates vary significantly between individuals</li>
                         </ul>
-                        <h4>What Oneless Does</h4>
-                        <p>Oneless provides behavioral tracking, progress monitoring, and motivational support through AI-powered insights. It's designed to complement, not replace, professional medical care and evidence-based cessation programs.</p>
                     </div>
-                    <button class="learn-more-btn" onclick="toggleDetails(this)">Learn More</button>
+                    <button class="learn-more-btn" onclick="toggleDetails(this)">
+                        <span>Learn More</span>
+                        <span>↓</span>
+                    </button>
                 </div>
             </div>
 
             <!-- Subscription Terms Card -->
-            <div class="term-card" data-delay="200">
+            <div class="term-card">
                 <div class="card-header">
                     <span class="card-icon">💎</span>
-                    <h2 class="card-title">Subscription Terms</h2>
-                    <p class="card-description">Premium plans, billing, and auto-renewal information</p>
+                    <div class="card-title-container">
+                        <h2 class="card-title">Subscription & Auto-Renewal</h2>
+                        <p class="card-subtitle">Premium plans, billing, and cancellation information</p>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="card-preview">
-                        <ul>
-                            <li>5-day free trial (no payment)</li>
-                            <li>$2.50/month subscription</li>
-                            <li>Auto-renewal enabled</li>
-                            <li>One device per account</li>
+                        <ul class="preview-list">
+                            <li>🆓 5-day free trial (no payment)</li>
+                            <li>💰 $2.50/month with auto-renewal</li>
+                            <li>📱 One device per account policy</li>
+                            <li>🔄 Easy cancellation anytime</li>
                         </ul>
                     </div>
                     <div class="card-details">
@@ -675,20 +695,7 @@
                                 <li><strong>Payment Processing:</strong> All billing handled securely through Google Play Store</li>
                             </ul>
                         </div>
-                        <h4>📱 Device & Account Management</h4>
-                        <ul>
-                            <li><strong>One Account Per Device:</strong> Each subscription is uniquely tied to a specific device ID</li>
-                            <li><strong>Device Switching Policy:</strong> First device change is unrestricted; subsequent changes require 1-month waiting period</li>
-                            <li><strong>Emergency Support:</strong> Contact xodaxoda@gmail.com for urgent device switch assistance</li>
-                            <li><strong>Policy Violations:</strong> Unauthorized device switching results in premium feature suspension</li>
-                        </ul>
-                        <h4>🔐 Security Requirements</h4>
-                        <ul>
-                            <li><strong>Online Verification:</strong> Must connect online every 3 days for subscription validation</li>
-                            <li><strong>Account Protection:</strong> Accounts automatically freeze after 11 days offline</li>
-                            <li><strong>Anti-Fraud Measures:</strong> Device time manipulation triggers security protocols</li>
-                        </ul>
-                        <h4>💳 Cancellation & Auto-Renewal</h4>
+                        <h4>💳 Auto-Renewal & Cancellation</h4>
                         <p><strong>Important:</strong> Your subscription will automatically renew each month unless you cancel before the renewal date.</p>
                         <a href="https://play.google.com/store/account/subscriptions" class="cancel-link" target="_blank">
                             🔗 Cancel Subscription on Google Play
@@ -696,27 +703,90 @@
                         <ul>
                             <li><strong>Easy Cancellation:</strong> Cancel anytime through Google Play Store account settings</li>
                             <li><strong>Access Continuation:</strong> Premium features remain active until current billing period ends</li>
-                            <li><strong>Refund Requests:</strong> Handled according to Google Play Store refund policies</li>
                             <li><strong>Important Note:</strong> Account deletion does not automatically cancel subscription</li>
                         </ul>
+                        <h4>📱 Device Management</h4>
+                        <ul>
+                            <li><strong>One Account Per Device:</strong> Each subscription is tied to a specific device ID</li>
+                            <li><strong>Device Switching:</strong> First change unrestricted; subsequent changes require 1-month wait</li>
+                            <li><strong>Online Verification:</strong> Must connect online every 3 days for validation</li>
+                        </ul>
                     </div>
-                    <button class="learn-more-btn" onclick="toggleDetails(this)">Learn More</button>
+                    <button class="learn-more-btn" onclick="toggleDetails(this)">
+                        <span>Learn More</span>
+                        <span>↓</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Privacy & Data Card -->
+            <div class="term-card">
+                <div class="card-header">
+                    <span class="card-icon">🔒</span>
+                    <div class="card-title-container">
+                        <h2 class="card-title">Privacy & Data Protection</h2>
+                        <p class="card-subtitle">How we protect and handle your personal information</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-preview">
+                        <ul class="preview-list">
+                            <li>🛡️ Bank-level encryption security</li>
+                            <li>🚫 No data sale to third parties</li>
+                            <li>🗑️ Complete data deletion rights</li>
+                            <li>📊 Behavioral data for AI coaching</li>
+                        </ul>
+                    </div>
+                    <div class="card-details">
+                        <div class="alert-box info">
+                            <h4>🔒 Key Privacy Points</h4>
+                            <ul>
+                                <li><strong>Behavioral Data:</strong> We collect smoking behavior data to provide personalized coaching</li>
+                                <li><strong>Firebase Integration:</strong> Secure data storage through Google Firebase</li>
+                                <li><strong>No Data Sale:</strong> We never share personal data for marketing purposes</li>
+                                <li><strong>Deletion Rights:</strong> Request complete data deletion at any time</li>
+                                <li><strong>Encryption:</strong> Bank-level security for all data transmission and storage</li>
+                            </ul>
+                        </div>
+                        <h4>📊 Data We Collect</h4>
+                        <ul>
+                            <li><strong>Smoking Behavior:</strong> Cigarette counts, timing, and reduction progress</li>
+                            <li><strong>Device Information:</strong> Device ID for subscription management</li>
+                            <li><strong>Usage Analytics:</strong> App interaction patterns for improvement</li>
+                            <li><strong>Account Data:</strong> Email and basic profile information</li>
+                        </ul>
+                        <h4>🔄 Your Data Rights</h4>
+                        <ul>
+                            <li><strong>Access:</strong> Request copies of your personal data</li>
+                            <li><strong>Correction:</strong> Update or correct inaccurate information</li>
+                            <li><strong>Deletion:</strong> Complete removal of your data from our systems</li>
+                            <li><strong>Portability:</strong> Export your data in a standard format</li>
+                        </ul>
+                        <p>Full details available in our <a href="privacy.html" style="color: var(--primary); font-weight: 600;">Privacy Policy</a>.</p>
+                    </div>
+                    <button class="learn-more-btn" onclick="toggleDetails(this)">
+                        <span>Learn More</span>
+                        <span>↓</span>
+                    </button>
                 </div>
             </div>
 
             <!-- Acceptable Use Card -->
-            <div class="term-card" data-delay="300">
+            <div class="term-card">
                 <div class="card-header">
                     <span class="card-icon">✅</span>
-                    <h2 class="card-title">Acceptable Use Policy</h2>
-                    <p class="card-description">Guidelines for responsible app usage</p>
+                    <div class="card-title-container">
+                        <h2 class="card-title">Acceptable Use Policy</h2>
+                        <p class="card-subtitle">Guidelines for responsible and secure app usage</p>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="card-preview">
-                        <ul>
-                            <li>No account sharing allowed</li>
-                            <li>Accurate data logging required</li>
-                            <li>Security measures must be respected</li>
+                        <ul class="preview-list">
+                            <li>🚫 No account sharing allowed</li>
+                            <li>📊 Accurate data logging required</li>
+                            <li>🔐 Security measures must be respected</li>
+                            <li>⚖️ Legal usage only</li>
                         </ul>
                     </div>
                     <div class="card-details">
@@ -739,130 +809,231 @@
                             <li><strong>Backup Management:</strong> Regular data backups recommended to prevent loss</li>
                             <li><strong>Personal Accountability:</strong> Your commitment to accuracy enhances the AI coaching experience</li>
                         </ul>
-                        <h4>🛡️ Consequences of Violations</h4>
-                        <p>Violations of our acceptable use policy may result in:</p>
-                        <ul>
-                            <li>Suspension of premium features</li>
-                            <li>Account termination</li>
-                            <li>Forfeiture of subscription fees</li>
-                            <li>Legal action in severe cases</li>
-                        </ul>
                     </div>
-                    <button class="learn-more-btn" onclick="toggleDetails(this)">Learn More</button>
-                </div>
-            </div>
-
-            <!-- Privacy & Data Card -->
-            <div class="term-card" data-delay="400">
-                <div class="card-header">
-                    <span class="card-icon">🔒</span>
-                    <h2 class="card-title">Privacy & Data Protection</h2>
-                    <p class="card-description">How we protect and handle your information</p>
-                </div>
-                <div class="card-body">
-                    <div class="card-preview">
-                        <ul>
-                            <li>Bank-level encryption security</li>
-                            <li>No data sale to third parties</li>
-                            <li>Complete data deletion rights</li>
-                        </ul>
-                    </div>
-                    <div class="card-details">
-                        <p>By using Oneless, you acknowledge and agree to our data collection and processing practices as detailed in our comprehensive <a href="privacy.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Privacy Policy</a>.</p>
-                        <div class="alert-box info">
-                            <h4>🔒 Key Privacy Points</h4>
-                            <ul>
-                                <li><strong>Behavioral Data:</strong> We collect smoking behavior data to provide personalized coaching</li>
-                                <li><strong>Firebase Integration:</strong> Secure data storage and analytics through Google Firebase</li>
-                                <li><strong>No Data Sale:</strong> We never share personal data for marketing purposes</li>
-                                <li><strong>Deletion Rights:</strong> Request complete data deletion at any time</li>
-                                <li><strong>Encryption:</strong> Bank-level security for all data transmission and storage</li>
-                            </ul>
-                        </div>
-                        <h4>📊 Data We Collect</h4>
-                        <ul>
-                            <li><strong>Smoking Behavior:</strong> Cigarette counts, timing, and reduction progress</li>
-                            <li><strong>Device Information:</strong> Device ID for subscription management</li>
-                            <li><strong>Usage Analytics:</strong> App interaction patterns for improvement</li>
-                            <li><strong>Account Data:</strong> Email and basic profile information</li>
-                        </ul>
-                        <h4>🛡️ Data Protection Measures</h4>
-                        <ul>
-                            <li><strong>End-to-End Encryption:</strong> All sensitive data encrypted in transit and at rest</li>
-                            <li><strong>Secure Servers:</strong> Data stored on secure Google Firebase infrastructure</li>
-                            <li><strong>Access Controls:</strong> Strict internal access policies and authentication</li>
-                            <li><strong>Regular Audits:</strong> Periodic security assessments and updates</li>
-                        </ul>
-                        <h4>🔄 Your Data Rights</h4>
-                        <ul>
-                            <li><strong>Access:</strong> Request copies of your personal data</li>
-                            <li><strong>Correction:</strong> Update or correct inaccurate information</li>
-                            <li><strong>Deletion:</strong> Complete removal of your data from our systems</li>
-                            <li><strong>Portability:</strong> Export your data in a standard format</li>
-                        </ul>
-                    </div>
-                    <button class="learn-more-btn" onclick="toggleDetails(this)">Learn More</button>
-                </div>
-            </div>
-
-            <!-- Intellectual Property Card -->
-            <div class="term-card" data-delay="500">
-                <div class="card-header">
-                    <span class="card-icon">©️</span>
-                    <h2 class="card-title">Intellectual Property</h2>
-                    <p class="card-description">App ownership and your data rights</p>
-                </div>
-                <div class="card-body">
-                    <div class="card-preview">
-                        <ul>
-                            <li>App owned by Ayon (UAE)</li>
-                            <li>Your data belongs to you</li>
-                            <li>No copying or redistribution</li>
-                        </ul>
-                    </div>
-                    <div class="card-details">
-                        <h4>📱 App Ownership</h4>
-                        <ul>
-                            <li><strong>Creator Rights:</strong> Oneless app, design, features, and algorithms owned by Ayon</li>
-                            <li><strong>Usage Restrictions:</strong> No copying, modifying, distributing, or creating derivative works</li>
-                            <li><strong>AI Technology:</strong> Proprietary behavioral intelligence algorithms protected by intellectual property laws</li>
-                            <li><strong>Trademark Protection:</strong> "Oneless" name and branding are protected trademarks</li>
-                        </ul>
-                        <h4>📊 Your Data Rights</h4>
-                        <ul>
-                            <li><strong>Data Ownership:</strong> Your smoking data belongs to you</li>
-                            <li><strong>App Functionality:</strong> App design and features remain our intellectual property</li>
-                            <li><strong>Feedback Usage:</strong> Suggestions you provide may be used for app improvements</li>
-                            <li><strong>License Grant:</strong> Limited license to use app features during active subscription</li>
-                        </ul>
-                        <h4>🚫 Prohibited Uses</h4>
-                        <ul>
-                            <li>Reverse engineering or decompiling the app</li>
-                            <li>Creating competing applications using our concepts</li>
-                            <li>Removing or modifying copyright notices</li>
-                            <li>Using our trademarks without permission</li>
-                        </ul>
-                    </div>
-                    <button class="learn-more-btn" onclick="toggleDetails(this)">Learn More</button>
+                    <button class="learn-more-btn" onclick="toggleDetails(this)">
+                        <span>Learn More</span>
+                        <span>↓</span>
+                    </button>
                 </div>
             </div>
 
             <!-- Liability & Disclaimers Card -->
-            <div class="term-card" data-delay="600">
+            <div class="term-card">
                 <div class="card-header">
                     <span class="card-icon">⚖️</span>
-                    <h2 class="card-title">Liability & Disclaimers</h2>
-                    <p class="card-description">Service limitations and legal disclaimers</p>
+                    <div class="card-title-container">
+                        <h2 class="card-title">Liability & Disclaimers</h2>
+                        <p class="card-subtitle">Service limitations and legal disclaimers</p>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="card-preview">
-                        <ul>
-                            <li>Service provided "AS IS"</li>
-                            <li>No health outcome guarantees</li>
-                            <li>Limited liability protection</li>
+                        <ul class="preview-list">
+                            <li>📋 Service provided "AS IS"</li>
+                            <li>🚫 No health outcome guarantees</li>
+                            <li>⚖️ Limited liability protection</li>
+                            <li>🛡️ Use at your own discretion</li>
                         </ul>
                     </div>
                     <div class="card-details">
                         <div class="alert-box warning">
                             <p><strong>⚠️ "AS IS" Service Provision</strong></p>
-                            <p>Oneless is provided "AS IS" without warranties of
+                            <p>Oneless is provided "AS IS" without warranties of any kind. We make no guarantees about health outcomes, app performance, data reliability, or device compatibility.</p>
+                        </div>
+                        <h4>🛡️ Liability Limitations</h4>
+                        <p><strong>We are not liable for damages arising from app use, including:</strong></p>
+                        <ul>
+                            <li><strong>Health Consequences:</strong> Medical issues or smoking-related outcomes</li>
+                            <li><strong>Financial Decisions:</strong> Choices based on app calculations or recommendations</li>
+                            <li><strong>Technical Issues:</strong> Data loss, device problems, or technical malfunctions</li>
+                            <li><strong>Billing Issues:</strong> Subscription matters handled by Google Play Store</li>
+                        </ul>
+                    </div>
+                    <button class="learn-more-btn" onclick="toggleDetails(this)">
+                        <span>Learn More</span>
+                        <span>↓</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Legal & Contact Card -->
+            <div class="term-card">
+                <div class="card-header">
+                    <span class="card-icon">🤝</span>
+                    <div class="card-title-container">
+                        <h2 class="card-title">Legal & Support</h2>
+                        <p class="card-subtitle">Governing law, dispute resolution, and how to contact us</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-preview">
+                        <ul class="preview-list">
+                            <li>🇦🇪 Governed by UAE law</li>
+                            <li>📧 Email: xodaxoda@gmail.com</li>
+                            <li>⏱️ 48-72 hour response time</li>
+                            <li>🔄 Terms may change with notice</li>
+                        </ul>
+                    </div>
+                    <div class="card-details">
+                        <h4>⚖️ Governing Law</h4>
+                        <p>These Terms of Service are governed by the laws of the <strong>United Arab Emirates</strong>. Any disputes arising from your use of Oneless will be resolved through appropriate legal channels in the UAE jurisdiction.</p>
+                        
+                        <h4>📞 Contact & Support</h4>
+                        <div class="alert-box info">
+                            <p><strong>Support Information:</strong></p>
+                            <ul>
+                                <li><strong>Primary Email:</strong> xodaxoda@gmail.com</li>
+                                <li><strong>Response Time:</strong> 48-72 hours for all inquiries</li>
+                                <li><strong>Emergency Device Changes:</strong> Priority support with verification</li>
+                                <li><strong>Account Deletion:</strong> Secure deletion process through email verification</li>
+                            </ul>
+                        </div>
+                        
+                        <h4>🔄 Terms Changes</h4>
+                        <ul>
+                            <li><strong>Advance Notice:</strong> Significant changes communicated 30 days before implementation</li>
+                            <li><strong>In-App Notifications:</strong> Prominent alerts when you next open the app</li>
+                            <li><strong>Continued Use Agreement:</strong> Using the app after changes indicates acceptance</li>
+                            <li><strong>Objection Rights:</strong> Option to delete account if you disagree with changes</li>
+                        </ul>
+                        
+                        <h4>📜 Intellectual Property</h4>
+                        <ul>
+                            <li><strong>App Ownership:</strong> Oneless app, design, and algorithms owned by Ayon</li>
+                            <li><strong>Your Data:</strong> Your smoking data belongs to you</li>
+                            <li><strong>Usage License:</strong> Limited license to use app features during active subscription</li>
+                            <li><strong>Trademark:</strong> "Oneless" name and branding are protected trademarks</li>
+                        </ul>
+                    </div>
+                    <button class="learn-more-btn" onclick="toggleDetails(this)">
+                        <span>Learn More</span>
+                        <span>↓</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Information Box -->
+        <div class="alert-box highlight" style="margin-top: 40px;">
+            <p><strong>These Terms of Service were last updated on August 4, 2025</strong></p>
+            <p><strong>© 2025 Ayon. All rights reserved.</strong> | Oneless - Premium Smoking Cessation Platform | Legally Engineered in UAE</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Ayon. All rights reserved. | Oneless - Revolutionary Smoking Cessation | Fair Terms, Premium Service</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Premium loading experience
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observe all term cards for fade-in animation
+            const termCards = document.querySelectorAll('.term-card');
+            termCards.forEach((card, index) => {
+                // Add staggered delay
+                card.style.animationDelay = `${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Premium navigation effects
+            const nav = document.querySelector('.nav');
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                    nav.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.7)';
+                    nav.style.borderBottom = '1px solid rgba(0, 0, 0, 0.05)';
+                }
+            });
+
+            // Show/hide back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            // Performance optimization
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (prefersReducedMotion.matches) {
+                const style = document.createElement('style');
+                style.textContent = `
+                    *, *::before, *::after {
+                        animation-duration: 0.01ms !important;
+                        animation-iteration-count: 1 !important;
+                        transition-duration: 0.01ms !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+        });
+
+        // Toggle card details function
+        function toggleDetails(button) {
+            const cardBody = button.closest('.card-body');
+            const details = cardBody.querySelector('.card-details');
+            const buttonText = button.querySelector('span:first-child');
+            const buttonIcon = button.querySelector('span:last-child');
+            
+            if (details.classList.contains('expanded')) {
+                details.classList.remove('expanded');
+                button.classList.remove('expanded');
+                buttonText.textContent = 'Learn More';
+                buttonIcon.textContent = '↓';
+            } else {
+                details.classList.add('expanded');
+                button.classList.add('expanded');
+                buttonText.textContent = 'Show Less';
+                buttonIcon.textContent = '↑';
+            }
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scroll for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 100;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
