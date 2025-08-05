@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oneless - Data & Account Deletion Policy</title>
+    <meta name="description" content="Instructions for requesting account and data deletion for the Oneless app by AyonTeam.">
+    
+    <!-- Preload critical font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* All CSS from your index.html is reused here for consistent styling */
+        :root {
+            --primary: #007AFF;
+            --primary-dark: #0056CC;
+            --secondary: #5856D6;
+            --accent: #FF3B30;
+            --success: #34C759;
+            --warning: #FF9500;
+            
+            --text-primary: #1D1D1F;
+            --text-secondary: #6E6E73;
+            --text-tertiary: #86868B;
+            
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F5F5F7;
+            --bg-tertiary: #FBFBFD;
+            --bg-dark: #1D1D1F;
+            
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-dark: rgba(29, 29, 31, 0.7);
+            
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 16px 60px rgba(0, 0, 0, 0.16);
+            
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-xl: 40px;
+            
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 16px 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .nav-cta {
+            background: var(--primary); color: white; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px; transition: var(--transition); box-shadow: var(--shadow-md);
+        }
+        .nav-cta:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 80px 32px; }
+
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-title { font-size: clamp(42px, 6vw, 64px); font-weight: 800; color: var(--text-primary); margin-bottom: 24px; line-height: 1.1; }
+        .section-description { font-size: 20px; color: var(--text-secondary); max-width: 700px; margin: 0 auto; line-height: 1.5; }
+
+        .policy-card {
+            background: var(--bg-primary);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 48px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 40px;
+        }
+        .policy-card h2 { font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 24px; }
+        .policy-card p { color: var(--text-secondary); margin-bottom: 24px; font-size: 16px; }
+        .policy-card li { color: var(--text-secondary); margin-left: 20px; margin-bottom: 12px; }
+        .policy-card ol { padding-left: 20px; }
+        .policy-card strong { color: var(--text-primary); font-weight: 600; }
+        .email-link { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .email-link:hover { text-decoration: underline; }
+
+        .footer { background: var(--bg-dark); color: white; padding: 80px 32px 40px; text-align: center; }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.6); }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Oneless</a>
+            <a href="index.html#coming-soon" class="nav-cta">Back to Main Site</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="section-header">
+            <h1 class="section-title">Data & Account Management</h1>
+            <p class="section-description">
+                Control your data with the Oneless app by AyonTeam. Here are the clear, simple steps to manage your information or delete your account.
+            </p>
+        </div>
+
+        <!-- Account Deletion Card -->
+        <section class="policy-card">
+            <h2>How to Delete Your Account</h2>
+            <p>
+                Requesting the permanent deletion of your Oneless account and all associated data is straightforward. Please follow these steps.
+            </p>
+            <ol>
+                <li>Compose a new email to our support team at <a href="mailto:ayon.helpdesk25@gmail.com?subject=Account Deletion Request" class="email-link"><strong>ayon.helpdesk25@gmail.com</strong></a>.</li>
+                <li>Use the subject line: <strong>"Account Deletion Request"</strong>.</li>
+                <li>Send the email from the address associated with your Oneless account for faster verification.</li>
+            </ol>
+            <p>
+                <strong>What happens next?</strong><br>
+                Once we receive your request, we will permanently delete all of your account data within <strong>30 days</strong>. This action is irreversible and will remove your email, authentication credentials, all smoking logs, and behavioral data.
+            </p>
+        </section>
+
+        <!-- Data Deletion Card -->
+        <section class="policy-card">
+            <h2>How to Delete Specific Data</h2>
+            <p>
+                The Oneless app is designed to give you direct control over your logged data without needing to delete your entire account.
+            </p>
+            <ol>
+                <li>Open the Oneless app on your device.</li>
+                <li>Navigate to the <strong>Analytics Dashboard</strong> screen.</li>
+                <li>Find your <strong>"Complete daily history"</strong> and select the specific day or entry you wish to remove.</li>
+                <li>Tap the <strong>delete icon</strong> to permanently erase that data point.</li>
+            </ol>
+             <p>
+                This action immediately removes the data from your device and is reflected in our systems. It gives you precise control over your personal history.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2025 AyonTeam. All rights reserved. | Oneless - Premium Smoking Cessation Platform</p>
+        </div>
+    </footer>
+
+</body>
+</html>
